@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Granadev - Software Solutions Granada</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="lang-switcher.js"></script>
+    <script>
+        // Optional: Configure Tailwind (e.g., custom colors, fonts)
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'tarawera-blue': '#0A3C5D',
+                'downy-aquamarine': '#77C9D4',
+                'silver-tree-green': '#57BC90',
+                'silver-tree-green-darker': '#4aa77e',
+                'light-text': '#ecf0f1',
+                'medium-text': '#bdc3c7',
+                'body-bg': '#f9f9f9',
+                'section-bg-alt': '#ffffff',
+                'border-color': '#e0e0e0',
+                'form-input-text': '#333',
+                'highlight-yellow': '#fde047',
+              },
+              fontFamily: {
+                sans: ['Poppins', 'sans-serif'],
+                cursive: ['Comfortaa', 'cursive'],
+                fugaz: ['Fugaz One', 'cursive'],
+              },
+            }
+          }
+        }
+    </script>
+    <style>
+        /* Add base styles or minor overrides if needed, but prefer utility classes */
+        html { scroll-behavior: smooth; }
+        body {
+            @apply font-sans font-normal leading-relaxed text-tarawera-blue bg-body-bg;
+         }
+         /* Use Comfortaa Bold for specific elements */
+         h2, h3, h4, h5, h6, .cta-button, header nav a, .lang-btn, #contact-form label, footer a, .contact-info strong {
+             @apply font-cursive font-bold;
+         }
+         /* Custom underline for section titles */
+        h2::after {
+            content: '';
+            @apply block w-[60px] h-[3px] bg-silver-tree-green mx-auto mt-2.5; /* Adjusted margin-top */
+        }
+        #form-message.success { @apply text-silver-tree-green; }
+        #form-message.error { @apply text-red-600; }
+
+        /* Mobile menu transition */
+        .nav-links {
+            transition: transform 0.3s ease-in-out;
+        }
+        .nav-links:not(.active) {
+            /* Example: Hide by default on mobile, Tailwind handles responsive display */
+        }
+
+         /* Replicate hover/active states */
+        .nav-links a:hover,
+        .nav-links a.active-link {
+             @apply text-silver-tree-green bg-silver-tree-green/10; /* Use opacity for background */
+        }
+        .lang-btn:hover {
+            @apply bg-silver-tree-green/10;
+        }
+        .lang-btn.active {
+            @apply border-silver-tree-green bg-silver-tree-green/10;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="bg-section-bg-alt text-tarawera-blue py-4 border-b border-border-color sticky top-0 left-0 w-full z-[1000] shadow-md">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#hero"><img src="granadev.png" alt="Granadev Logo" class="max-h-[85px] transition-transform duration-300 ease-in-out hover:scale-105"></a>
+            <nav class="hidden md:block">
+                <ul class="nav-links flex items-center">
+                    <li class="ml-6"><a href="#hero" data-key="navHome" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Home</a></li>
+                    <li class="ml-6"><a href="#services" data-key="navServices" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Services</a></li>
+                    <li class="ml-6"><a href="#about" data-key="navAbout" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">About Us</a></li>
+                    <li class="ml-6"><a href="#contact" data-key="navContact" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Contact</a></li>
+                    <li class="ml-6"><a href="summer-of-code.html" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out text-highlight-yellow hover:text-silver-tree-green">Summer of Code</a></li>
+                    <li class="lang-switcher-item ml-8 list-none">
+                         <div class="lang-switcher flex items-center">
+                             <button id="lang-en" class="lang-btn bg-none border-2 border-transparent text-tarawera-blue cursor-pointer text-2xl px-1 py-0.5 mx-1 rounded transition-colors duration-300 ease-in-out leading-none" aria-label="Switch to English">🇬🇧</button>
+                             <button id="lang-es" class="lang-btn bg-none border-2 border-transparent text-tarawera-blue cursor-pointer text-2xl px-1 py-0.5 mx-1 rounded transition-colors duration-300 ease-in-out leading-none" aria-label="Switch to Spanish">🇪🇸</button>
+                         </div>
+                     </li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle md:hidden bg-none border-none text-3xl cursor-pointer text-tarawera-blue p-1 z-[1100]" aria-label="Toggle menu" aria-expanded="false">☰</button>
+        </div>
+        <div class="md:hidden">
+             <ul class="nav-links hidden flex-col absolute top-full left-0 w-full bg-section-bg-alt shadow-lg border-t border-border-color">
+                  <li class="text-center border-b border-border-color"><a href="#hero" data-key="navHome" class="block p-4">Home</a></li>
+                  <li class="text-center border-b border-border-color"><a href="#services" data-key="navServices" class="block p-4">Services</a></li>
+                  <li class="text-center border-b border-border-color"><a href="#about" data-key="navAbout" class="block p-4">About Us</a></li>
+                  <li class="text-center border-b border-border-color"><a href="#contact" data-key="navContact" class="block p-4">Contact</a></li>
+                  <li class="text-center border-b border-border-color"><a href="summer-of-code.html" class="block p-4 text-highlight-yellow">Summer of Code</a></li>
+                  <li class="lang-switcher-item list-none py-3 px-0 bg-body-bg">
+                       <div class="lang-switcher flex items-center justify-center">
+                           <button id="lang-en" class="lang-btn bg-none border-2 border-transparent text-tarawera-blue cursor-pointer text-2xl px-1 py-0.5 mx-1 rounded transition-colors duration-300 ease-in-out leading-none" aria-label="Switch to English">🇬🇧</button>
+                           <button id="lang-es" class="lang-btn bg-none border-2 border-transparent text-tarawera-blue cursor-pointer text-2xl px-1 py-0.5 mx-1 rounded transition-colors duration-300 ease-in-out leading-none" aria-label="Switch to Spanish">🇪🇸</button>
+                       </div>
+                   </li>
+             </ul>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="bg-cover bg-center text-light-text text-center py-32 min-h-[60vh] flex items-center justify-center" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('granada.jpg'); background-color: var(--tarawera-blue);">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tight text-tarawera-blue mb-6 leading-tight font-fugaz">
+                    <span data-key="heroHeadline">Quality Software Made in Granada</span>
+                </h1>
+                <p data-key="heroSubheadline" class="text-lg text-tarawera-blue max-w-xl mx-auto mb-8 font-light">We blend cutting-edge technology with local expertise to craft custom software, web applications, and mobile solutions that drive your business forward.</p>
+                <a href="#contact" class="cta-button inline-block bg-silver-tree-green text-white px-10 py-3 rounded font-cursive font-bold text-lg uppercase tracking-wider transition-all duration-300 ease-in-out shadow-md hover:bg-silver-tree-green-darker hover:-translate-y-0.5" data-key="heroCTA">Request a Consultation</a>
+            </div>
+        </section>
+
+        <section id="services" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 data-key="servicesTitle" class="text-4xl text-center mb-14 text-tarawera-blue relative">Our Expertise, Your Solution</h2>
+                <div class="grid gap-9 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="bg-section-bg-alt p-9 rounded-lg shadow-md transition-all duration-300 ease-in-out text-center border-t-4 border-downy-aquamarine hover:-translate-y-1 hover:shadow-lg">
+                        <i class="fas fa-code text-4xl text-silver-tree-green mb-4"></i>
+                        <h3 data-key="service1Title" class="text-2xl mb-4 text-tarawera-blue">Custom Software Development</h3>
+                        <p data-key="service1Desc" class="text-tarawera-blue text-base font-normal">Tailored software built precisely for your unique business processes and goals.</p>
+                    </div>
+                    <div class="bg-section-bg-alt p-9 rounded-lg shadow-md transition-all duration-300 ease-in-out text-center border-t-4 border-downy-aquamarine hover:-translate-y-1 hover:shadow-lg">
+                        <i class="fas fa-globe text-4xl text-silver-tree-green mb-4"></i>
+                        <h3 data-key="service2Title" class="text-2xl mb-4 text-tarawera-blue">Web Application Development</h3>
+                        <p data-key="service2Desc" class="text-tarawera-blue text-base font-normal">Powerful, scalable, and user-friendly web apps to engage your audience and streamline operations.</p>
+                    </div>
+                    <div class="bg-section-bg-alt p-9 rounded-lg shadow-md transition-all duration-300 ease-in-out text-center border-t-4 border-downy-aquamarine hover:-translate-y-1 hover:shadow-lg">
+                        <i class="fas fa-mobile-alt text-4xl text-silver-tree-green mb-4"></i>
+                        <h3 data-key="service3Title" class="text-2xl mb-4 text-tarawera-blue">Mobile App Development (iOS & Android)</h3>
+                        <p data-key="service3Desc" class="text-tarawera-blue text-base font-normal">Native and cross-platform mobile applications that deliver seamless user experiences on any device.</p>
+                    </div>
+                     <div class="bg-section-bg-alt p-9 rounded-lg shadow-md transition-all duration-300 ease-in-out text-center border-t-4 border-downy-aquamarine hover:-translate-y-1 hover:shadow-lg">
+                        <i class="fas fa-paint-brush text-4xl text-silver-tree-green mb-4"></i>
+                        <h3 data-key="service4Title" class="text-2xl mb-4 text-tarawera-blue">UI/UX Design</h3>
+                        <p data-key="service4Desc" class="text-tarawera-blue text-base font-normal">Intuitive and engaging interfaces designed to delight users and enhance usability.</p>
+                    </div>
+                     </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-section-bg-alt border-t border-b border-border-color">
+            <div class="container mx-auto px-6">
+                <h2 data-key="aboutTitle" class="text-4xl text-center mb-14 text-tarawera-blue relative">Why Partner with Granadev?</h2>
+                
+                <!-- Main About Content -->
+                <div class="grid md:grid-cols-2 gap-12 mb-16">
+                    <div class="space-y-6">
+                        <h3 data-key="aboutMainTitle" class="text-3xl text-tarawera-blue font-cursive">Your Local Tech Partner in Granada</h3>
+                        <p data-key="aboutMainDesc" class="text-lg text-tarawera-blue/80 leading-relaxed">Based in the heart of Granada's tech ecosystem, we combine local expertise with global standards to deliver exceptional software solutions. Our team of passionate developers and designers work closely with you to understand your unique needs and transform them into powerful digital solutions.</p>
+                        <div class="flex items-center space-x-4">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-check-circle text-3xl text-silver-tree-green"></i>
+                            </div>
+                            <p data-key="aboutHighlight" class="text-lg text-tarawera-blue">100% Local Team | 10+ Years Experience | 50+ Successful Projects</p>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-silver-tree-green/10 rounded-lg transform rotate-3"></div>
+                        <div class="relative bg-white p-8 rounded-lg shadow-lg">
+                            <div class="grid grid-cols-2 gap-6">
+                                <div class="text-center p-4 bg-silver-tree-green/5 rounded-lg">
+                                    <i class="fas fa-code-branch text-3xl text-silver-tree-green mb-2"></i>
+                                    <h4 class="text-xl font-cursive text-tarawera-blue mb-1" data-key="aboutStat1Title">Projects</h4>
+                                    <p class="text-3xl font-bold text-silver-tree-green" data-key="aboutStat1Value">50+</p>
+                                </div>
+                                <div class="text-center p-4 bg-silver-tree-green/5 rounded-lg">
+                                    <i class="fas fa-users text-3xl text-silver-tree-green mb-2"></i>
+                                    <h4 class="text-xl font-cursive text-tarawera-blue mb-1" data-key="aboutStat2Title">Team</h4>
+                                    <p class="text-3xl font-bold text-silver-tree-green" data-key="aboutStat2Value">15+</p>
+                                </div>
+                                <div class="text-center p-4 bg-silver-tree-green/5 rounded-lg">
+                                    <i class="fas fa-award text-3xl text-silver-tree-green mb-2"></i>
+                                    <h4 class="text-xl font-cursive text-tarawera-blue mb-1" data-key="aboutStat3Title">Experience</h4>
+                                    <p class="text-3xl font-bold text-silver-tree-green" data-key="aboutStat3Value">10+</p>
+                                </div>
+                                <div class="text-center p-4 bg-silver-tree-green/5 rounded-lg">
+                                    <i class="fas fa-smile text-3xl text-silver-tree-green mb-2"></i>
+                                    <h4 class="text-xl font-cursive text-tarawera-blue mb-1" data-key="aboutStat4Title">Clients</h4>
+                                    <p class="text-3xl font-bold text-silver-tree-green" data-key="aboutStat4Value">30+</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Features Grid -->
+                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-silver-tree-green shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-map-marker-alt text-2xl text-silver-tree-green mr-3"></i>
+                            <h3 data-key="aboutPoint1Title" class="text-xl text-tarawera-blue">Granada-Based Expertise</h3>
+                        </div>
+                        <p data-key="aboutPoint1Desc" class="text-tarawera-blue/80 text-base font-normal">Rooted in the vibrant tech scene of Granada, we combine local talent with global standards.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-silver-tree-green shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-puzzle-piece text-2xl text-silver-tree-green mr-3"></i>
+                            <h3 data-key="aboutPoint2Title" class="text-xl text-tarawera-blue">Tailored Solutions</h3>
+                        </div>
+                        <p data-key="aboutPoint2Desc" class="text-tarawera-blue/80 text-base font-normal">We don't believe in one-size-fits-all. Your software is built specifically for your needs.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-silver-tree-green shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-lightbulb text-2xl text-silver-tree-green mr-3"></i>
+                            <h3 data-key="aboutPoint3Title" class="text-xl text-tarawera-blue">Quality & Innovation</h3>
+                        </div>
+                        <p data-key="aboutPoint3Desc" class="text-tarawera-blue/80 text-base font-normal">Committed to delivering robust, reliable, and forward-thinking software using modern technologies.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-silver-tree-green shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-handshake text-2xl text-silver-tree-green mr-3"></i>
+                            <h3 data-key="aboutPoint4Title" class="text-xl text-tarawera-blue">Client-Centric Approach</h3>
+                        </div>
+                        <p data-key="aboutPoint4Desc" class="text-tarawera-blue/80 text-base font-normal">We work collaboratively with you, ensuring transparency and alignment throughout the project lifecycle.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-tarawera-blue text-light-text">
+            <div class="container mx-auto px-6">
+                <h2 data-key="contactTitle" class="text-4xl text-center mb-14 text-light-text relative">Let's Build Something Great Together</h2>
+                <style> #contact h2::after { background-color: var(--silver-tree-green); } </style>
+                <p class="text-center text-medium-text font-light mb-12" data-key="contactIntro">Have a project in mind or questions about our services? We'd love to hear from you!</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Office Location -->
+                    <div class="bg-section-bg-alt/10 p-8 rounded-lg backdrop-blur-sm border border-light-text/10 hover:border-silver-tree-green/30 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-map-marker-alt text-2xl text-silver-tree-green mr-3"></i>
+                            <h3 data-key="contactAddressLabel" class="text-xl font-cursive">Our Office</h3>
+                        </div>
+                        <p data-key="contactAddressValue" class="text-light-text/90 leading-relaxed">Calle Recogidas, 35, 1A<br>18005 Granada, Spain</p>
+                        <a href="https://maps.google.com/?q=Calle+Recogidas+35+Granada" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-downy-aquamarine hover:text-light-text transition-colors duration-300">
+                            <i class="fas fa-directions mr-2"></i>Get Directions
+                        </a>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="bg-section-bg-alt/10 p-8 rounded-lg backdrop-blur-sm border border-light-text/10 hover:border-silver-tree-green/30 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-envelope text-2xl text-silver-tree-green mr-3"></i>
+                            <h3 data-key="contactEmailLabel" class="text-xl font-cursive">Email Us</h3>
+                        </div>
+                        <a href="mailto:info@granadev.es" data-key="contactEmailValue" class="text-downy-aquamarine hover:text-light-text transition-colors duration-300 block mb-4">
+                            info@granadev.es
+                        </a>
+                        <div class="flex items-center mt-4">
+                            <i class="fas fa-phone text-silver-tree-green mr-3"></i>
+                            <a href="tel:+34958123456" class="text-light-text/90 hover:text-light-text transition-colors duration-300">
+                                +34 958 123 456
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="bg-section-bg-alt/10 p-8 rounded-lg backdrop-blur-sm border border-light-text/10 hover:border-silver-tree-green/30 transition-all duration-300">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-clock text-2xl text-silver-tree-green mr-3"></i>
+                            <h3 data-key="contactHoursLabel" class="text-xl font-cursive">Business Hours</h3>
+                        </div>
+                        <div class="space-y-2 text-light-text/90">
+                            <p><span class="font-medium">Monday - Friday:</span> 9:00 - 18:00</p>
+                            <p><span class="font-medium">Saturday - Sunday:</span> Closed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Links -->
+                <div class="flex justify-center space-x-6 mt-12">
+                    <a href="https://www.linkedin.com/company/granadadevelopment" class="text-light-text/80 hover:text-silver-tree-green transition-colors duration-300 text-2xl" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <!-- <a href="#" class="text-light-text/80 hover:text-silver-tree-green transition-colors duration-300 text-2xl" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-light-text/80 hover:text-silver-tree-green transition-colors duration-300 text-2xl" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="text-light-text/80 hover:text-silver-tree-green transition-colors duration-300 text-2xl" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i> -->
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-tarawera-blue text-light-text text-center py-8 mt-0 border-t-4 border-silver-tree-green">
+        <div class="container mx-auto px-6">
+            <p data-key="footerText" class="m-0 text-medium-text font-sans">© 2025 Granadev. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Language switching logic moved to lang-switcher.js -->
+    <script>
+        // Only keep contact form logic if present
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const message = document.getElementById('message').value.trim();
+                    const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+
+                    if (!name || !email || !message) {
+                        formMessage.textContent = "Please fill in all required fields."; // Basic validation msg
+                        formMessage.className = 'error';
+                        return;
+                    }
+
+                    formMessage.textContent = "Sending...";
+                    formMessage.className = 'success';
+                    contactForm.reset();
+
+                    setTimeout(() => {
+                        formMessage.textContent = '';
+                        formMessage.className = '';
+                    }, 5000);
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

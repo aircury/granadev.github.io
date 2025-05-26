@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer of Code - Granadev</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="lang-switcher.js"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'tarawera-blue': '#0A3C5D',
+                'downy-aquamarine': '#77C9D4',
+                'silver-tree-green': '#57BC90',
+                'silver-tree-green-darker': '#4aa77e',
+                'light-text': '#ecf0f1',
+                'medium-text': '#bdc3c7',
+                'body-bg': '#f9f9f9',
+                'section-bg-alt': '#ffffff',
+                'border-color': '#e0e0e0',
+                'form-input-text': '#333',
+                'highlight-yellow': '#fde047',
+              },
+              fontFamily: {
+                sans: ['Poppins', 'sans-serif'],
+                cursive: ['Comfortaa', 'cursive'],
+                fugaz: ['Fugaz One', 'cursive'],
+              },
+            }
+          }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            @apply font-sans font-normal leading-relaxed text-tarawera-blue bg-body-bg;
+         }
+         h1, h2, h3, h4, h5, h6, .cta-button, header nav a, .lang-btn, #contact-form label, footer a, .contact-info strong {
+             @apply font-cursive font-bold;
+         }
+         h2::after {
+            content: '';
+            @apply block w-[60px] h-[3px] bg-silver-tree-green mx-auto mt-2.5;
+        }
+        .nav-links {
+            transition: transform 0.3s ease-in-out;
+        }
+        .nav-links a:hover,
+        .nav-links a.active-link {
+             @apply text-silver-tree-green bg-silver-tree-green/10;
+        }
+        .lang-btn:hover {
+            @apply bg-silver-tree-green/10;
+        }
+        .lang-btn.active {
+            @apply border-silver-tree-green bg-silver-tree-green/10;
+        }
+        .summer-gradient {
+            background: linear-gradient(135deg, #fde047 0%, #facc15 50%, #eab308 100%);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-section-bg-alt text-tarawera-blue py-4 border-b border-border-color sticky top-0 left-0 w-full z-[1000] shadow-md">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html"><img src="granadev.png" alt="Granadev Logo" class="max-h-[85px] transition-transform duration-300 ease-in-out hover:scale-105"></a>
+            <nav class="hidden md:block">
+                <ul class="nav-links flex items-center">
+                    <li class="ml-6"><a href="index.html" data-key="navHome" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Inicio</a></li>
+                    <li class="ml-6"><a href="index.html#services" data-key="navServices" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Servicios</a></li>
+                    <li class="ml-6"><a href="index.html#about" data-key="navAbout" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Quiénes Somos</a></li>
+                    <li class="ml-6"><a href="index.html#contact" data-key="navContact" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Contacto</a></li>
+                    <li class="ml-6"><a href="#" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out active-link text-highlight-yellow" data-key="navSoc">Summer of Code</a></li>
+                    <li class="lang-switcher-item ml-8 list-none">
+                        <div class="lang-switcher flex items-center">
+                            <button id="lang-en" class="lang-btn bg-none border-2 border-transparent text-tarawera-blue cursor-pointer text-2xl px-1 py-0.5 mx-1 rounded transition-colors duration-300 ease-in-out leading-none" aria-label="Switch to English">🇬🇧</button>
+                            <button id="lang-es" class="lang-btn bg-none border-2 border-transparent text-tarawera-blue cursor-pointer text-2xl px-1 py-0.5 mx-1 rounded transition-colors duration-300 ease-in-out leading-none" aria-label="Switch to Spanish">🇪🇸</button>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle md:hidden bg-none border-none text-3xl cursor-pointer text-tarawera-blue p-1 z-[1100]" aria-label="Toggle menu" aria-expanded="false">☰</button>
+        </div>
+        <div class="md:hidden">
+             <ul class="nav-links hidden flex-col absolute top-full left-0 w-full bg-section-bg-alt shadow-lg border-t border-border-color">
+                  <li class="text-center border-b border-border-color"><a href="index.html" data-key="navHome" class="block p-4">Inicio</a></li>
+                  <li class="text-center border-b border-border-color"><a href="index.html#services" data-key="navServices" class="block p-4">Servicios</a></li>
+                  <li class="text-center border-b border-border-color"><a href="index.html#about" data-key="navAbout" class="block p-4">Quiénes Somos</a></li>Summer
+                  <li class="text-center border-b border-border-color"><a href="index.html#contact" data-key="navContact" class="block p-4">Contacto</a></li>
+                  <li class="text-center border-b border-border-color"><a href="#" data-key="navSoc" class="block p-4 active-link text-highlight-yellow">Summer of Code</a></li>
+                  <li class="lang-switcher-item list-none py-3 px-0 bg-body-bg">
+                      <div class="lang-switcher flex items-center justify-center">
+                          <button id="lang-en" class="lang-btn bg-none border-2 border-transparent text-tarawera-blue cursor-pointer text-2xl px-1 py-0.5 mx-1 rounded transition-colors duration-300 ease-in-out leading-none" aria-label="Switch to English">🇬🇧</button>
+                          <button id="lang-es" class="lang-btn bg-none border-2 border-transparent text-tarawera-blue cursor-pointer text-2xl px-1 py-0.5 mx-1 rounded transition-colors duration-300 ease-in-out leading-none" aria-label="Switch to Spanish">🇪🇸</button>
+                      </div>
+                  </li>
+             </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-cover bg-center text-center py-16 md:py-32 min-h-[60vh] flex items-center justify-center summer-gradient">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+                    <!-- Left: Image -->
+                    <div class="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
+                        <img src="soc.jpg" alt="Summer of Code" class="rounded-2xl shadow-2xl max-h-[1000px] w-auto object-cover">
+                    </div>
+                    <!-- Right: Content -->
+                    <div class="w-full md:w-1/2 flex flex-col items-center md:items-start">
+                        <div class="flex items-center justify-center mb-6">
+                            <img src="granadev.png" alt="Granadev Logo" class="max-h-[90px] md:max-h-[120px] mr-0 md:mr-6">
+                        </div>
+                        <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold uppercase tracking-tight text-tarawera-blue mb-4 leading-tight font-fugaz text-center md:text-left" data-key="heroTitle">
+                            SUMMER OF CODE
+                        </h1>
+                        <div class="bg-tarawera-blue text-white px-8 py-6 rounded-lg inline-block transform rotate-1 shadow-xl mt-4 md:mt-6">
+                            <h2 class="text-2xl sm:text-3xl font-bold mb-2" data-key="heroScholarships">3 BECAS DE</h2>
+                            <h2 class="text-4xl sm:text-5xl font-bold text-highlight-yellow" data-key="heroAmount">3000 €</h2>
+                            <h2 class="text-xl sm:text-2xl font-bold" data-key="heroEach">CADA UNA</h2>
+                            <p class="text-lg mt-2 font-normal" data-key="heroSubtitle">PARA 3 PROYECTOS ESTE VERANO</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Section -->
+        <section class="py-20 bg-section-bg-alt">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl text-tarawera-blue mb-6" data-key="mainPitch">Premiamos las mejores propuestas de código abierto relacionadas con la educación u otro beneficio social</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <!-- Requirements Section -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg border-l-4 border-silver-tree-green">
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-graduation-cap text-3xl text-silver-tree-green mr-4"></i>
+                            <h3 class="text-2xl text-tarawera-blue font-cursive" data-key="forStudents">PARA ESTUDIANTES DE PROGRAMACIÓN</h3>
+                        </div>
+                        <div class="space-y-4 text-tarawera-blue">
+                            <p class="text-lg font-medium" data-key="studentReq">Solo necesitas estar cursando un título reglado relacionado con:</p>
+                            <ul class="list-disc list-inside space-y-2 ml-4">
+                                <li data-key="studentReq1">La programación</li>
+                                <li data-key="studentReq2">El desarrollo web</li>
+                                <li data-key="studentReq3">Aplicaciones multiplataforma</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Submission Requirements -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg border-l-4 border-downy-aquamarine">
+                        <div class="flex items-center mb-6">
+                            <i class="fas fa-paper-plane text-3xl text-downy-aquamarine mr-4"></i>
+                            <h3 class="text-2xl text-tarawera-blue font-cursive" data-key="sendTo">ENVÍA A</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-silver-tree-green text-white px-4 py-3 rounded-lg text-center">
+                                <a href="mailto:summerofcode@aircury.es" class="text-xl font-bold hover:underline" data-key="socEmail">summerofcode@aircury.es</a>
+                            </div>
+                            <ul class="list-disc list-inside space-y-2 text-tarawera-blue">
+                                <li><strong data-key="proposal">Presentación de tu propuesta</strong></li>
+                                <li><strong data-key="techList">Listado de tecnologías</strong></li>
+                                <li><strong data-key="form">Formulario facilitado en las bases</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Section -->
+                <div class="mt-16 bg-gradient-to-r from-tarawera-blue to-silver-tree-green text-white p-8 rounded-lg">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-calendar-alt text-3xl mr-4"></i>
+                                <h3 class="text-2xl font-cursive" data-key="until">HASTA</h3>
+                            </div>
+                            <div class="bg-highlight-yellow text-tarawera-blue px-6 py-3 rounded-lg inline-block">
+                                <span class="text-2xl font-bold" data-key="deadline">Final de junio</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-lg leading-relaxed" data-key="eval">
+                                <strong>Evaluación de las propuestas y declaración de ganadores en los primeros días de julio</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="text-center mt-16">
+                    <div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl mx-auto">
+                        <h3 class="text-3xl text-tarawera-blue mb-6 font-cursive" data-key="ready">¿Listo para participar?</h3>
+                        <p class="text-lg text-tarawera-blue mb-8" data-key="info">
+                            Pieza de carácter informativo.<br>
+                            Las condiciones y las bases del concurso se encuentran descritas en el enlace 
+                            <a href="https://bit.ly/aircury-summer-of-code-bases" target="_blank" class="text-silver-tree-green hover:underline font-bold" data-key="basesLink">bit.ly/aircury-summer-of-code-bases</a>
+                        </p>
+                        <!-- QR Code placeholder -->
+                        <div class="flex justify-center mb-6">
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <div class="w-32 h-32 bg-gradient-to-br from-tarawera-blue to-silver-tree-green rounded flex items-center justify-center">
+                                    <i class="fas fa-qrcode text-4xl text-white"></i>
+                                </div>
+                                <p class="text-sm text-tarawera-blue mt-2 text-center font-bold" data-key="bases">BASES</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="mailto:summerofcode@aircury.es" class="cta-button inline-block bg-silver-tree-green text-white px-8 py-3 rounded font-cursive font-bold text-lg uppercase tracking-wider transition-all duration-300 ease-in-out shadow-md hover:bg-silver-tree-green-darker hover:-translate-y-0.5" data-key="sendProposal">
+                                <i class="fas fa-envelope mr-2"></i>Enviar Propuesta
+                            </a>
+                            <a href="https://bit.ly/aircury-summer-of-code-bases" target="_blank" class="cta-button inline-block bg-tarawera-blue text-white px-8 py-3 rounded font-cursive font-bold text-lg uppercase tracking-wider transition-all duration-300 ease-in-out shadow-md hover:bg-tarawera-blue/90 hover:-translate-y-0.5" data-key="seeBases">
+                                <i class="fas fa-file-alt mr-2"></i>Ver Bases
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Partner Section -->
+                <div class="mt-16 text-center">
+                    <p class="text-lg text-tarawera-blue mb-4" data-key="collab">En colaboración con</p>
+                    <div class="flex justify-center items-center">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <p class="text-2xl font-bold text-tarawera-blue">Grupo <span class="text-silver-tree-green" data-key="aircury">Aircury</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-tarawera-blue text-light-text text-center py-8 mt-0 border-t-4 border-silver-tree-green">
+        <div class="container mx-auto px-6">
+            <p class="m-0 text-medium-text font-sans" data-key="footerText">© 2025 Granadev. Todos los Derechos Reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html> 
