@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Offers - Granadev</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="lang-switcher.js"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'tarawera-blue': '#0A3C5D',
+                'downy-aquamarine': '#77C9D4',
+                'silver-tree-green': '#57BC90',
+                'silver-tree-green-darker': '#4aa77e',
+                'light-text': '#ecf0f1',
+                'medium-text': '#bdc3c7',
+                'body-bg': '#f9f9f9',
+                'section-bg-alt': '#ffffff',
+                'border-color': '#e0e0e0',
+                'form-input-text': '#333',
+                'highlight-yellow': '#fde047',
+              },
+              fontFamily: {
+                sans: ['Poppins', 'sans-serif'],
+                cursive: ['Comfortaa', 'cursive'],
+                fugaz: ['Fugaz One', 'cursive'],
+              },
+            }
+          }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            @apply font-sans font-normal leading-relaxed text-tarawera-blue bg-body-bg;
+         }
+         h2, h3, h4, h5, h6, .cta-button, header nav a, .lang-btn, footer a {
+             @apply font-cursive font-bold;
+         }
+        h2::after {
+            content: '';
+            @apply block w-[60px] h-[3px] bg-silver-tree-green mx-auto mt-2.5;
+        }
+        .nav-links {
+            transition: transform 0.3s ease-in-out;
+        }
+        .nav-links a:hover,
+        .nav-links a.active-link {
+             @apply text-silver-tree-green bg-silver-tree-green/10;
+        }
+        .lang-btn:hover {
+            @apply bg-silver-tree-green/10;
+        }
+        .lang-btn.active {
+            @apply border-silver-tree-green bg-silver-tree-green/10;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-section-bg-alt text-tarawera-blue py-4 border-b border-border-color sticky top-0 left-0 w-full z-[1000] shadow-md">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html"><img src="granadev.png" alt="Granadev Logo" class="max-h-[85px] transition-transform duration-300 ease-in-out hover:scale-105"></a>
+            <nav class="hidden md:block">
+                <ul class="nav-links flex items-center">
+                    <li class="ml-6"><a href="index.html#hero" data-key="navHome" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Home</a></li>
+                    <li class="ml-6"><a href="index.html#services" data-key="navServices" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Services</a></li>
+                    <li class="ml-6"><a href="index.html#about" data-key="navAbout" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">About Us</a></li>
+                    <li class="ml-6"><a href="index.html#contact" data-key="navContact" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Contact</a></li>
+                    <li class="ml-6"><a href="summer-of-code.html" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out text-highlight-yellow hover:text-silver-tree-green">Summer of Code</a></li>
+                    <li class="ml-6"><a href="offers.html" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out text-silver-tree-green font-bold">Job Offers</a></li>
+                    <li class="lang-switcher-item ml-8 list-none">
+                         <div class="lang-switcher flex items-center">
+                             <button id="lang-en" class="lang-btn bg-none border-2 border-transparent text-tarawera-blue cursor-pointer text-2xl px-1 py-0.5 mx-1 rounded transition-colors duration-300 ease-in-out leading-none" aria-label="Switch to English">🇬🇧</button>
+                             <button id="lang-es" class="lang-btn bg-none border-2 border-transparent text-tarawera-blue cursor-pointer text-2xl px-1 py-0.5 mx-1 rounded transition-colors duration-300 ease-in-out leading-none" aria-label="Switch to Spanish">🇪🇸</button>
+                         </div>
+                     </li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle md:hidden bg-none border-none text-3xl cursor-pointer text-tarawera-blue p-1 z-[1100]" aria-label="Toggle menu" aria-expanded="false">☰</button>
+        </div>
+        <div class="md:hidden">
+             <ul class="nav-links hidden flex-col absolute top-full left-0 w-full bg-section-bg-alt shadow-lg border-t border-border-color">
+                  <li class="text-center border-b border-border-color"><a href="index.html#hero" data-key="navHome" class="block p-4">Home</a></li>
+                  <li class="text-center border-b border-border-color"><a href="index.html#services" data-key="navServices" class="block p-4">Services</a></li>
+                  <li class="text-center border-b border-border-color"><a href="index.html#about" data-key="navAbout" class="block p-4">About Us</a></li>
+                  <li class="text-center border-b border-border-color"><a href="index.html#contact" data-key="navContact" class="block p-4">Contact</a></li>
+                  <li class="text-center border-b border-border-color"><a href="summer-of-code.html" class="block p-4 text-highlight-yellow">Summer of Code</a></li>
+                  <li class="text-center border-b border-border-color"><a href="offers.html" class="block p-4 text-silver-tree-green font-bold">Job Offers</a></li>
+                  <li class="lang-switcher-item list-none py-3 px-0 bg-body-bg">
+                       <div class="lang-switcher flex items-center justify-center">
+                           <button id="lang-en" class="lang-btn bg-none border-2 border-transparent text-tarawera-blue cursor-pointer text-2xl px-1 py-0.5 mx-1 rounded transition-colors duration-300 ease-in-out leading-none" aria-label="Switch to English">🇬🇧</button>
+                           <button id="lang-es" class="lang-btn bg-none border-2 border-transparent text-tarawera-blue cursor-pointer text-2xl px-1 py-0.5 mx-1 rounded transition-colors duration-300 ease-in-out leading-none" aria-label="Switch to Spanish">🇪🇸</button>
+                       </div>
+                   </li>
+             </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-section-bg-alt text-center py-16 border-b border-border-color">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tight text-tarawera-blue mb-6 leading-tight font-fugaz" data-key="offersTitle">Job Offers</h1>
+                <p class="text-lg text-tarawera-blue max-w-2xl mx-auto font-light" data-key="offersSubtitle">Join our team and help us build quality software solutions</p>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <!-- Job Offer Card -->
+                <div class="bg-section-bg-alt rounded-lg shadow-lg p-8 md:p-12 mb-8 border-t-4 border-silver-tree-green">
+                    <div class="mb-8">
+                        <h2 class="text-3xl text-tarawera-blue mb-4" data-key="offerTitle">Software Developer Position</h2>
+                        <p class="text-tarawera-blue/80 text-lg mb-6" data-key="offerIntro">We are looking for talented developers to join our team. This is an excellent opportunity for those starting their career in software development.</p>
+                    </div>
+
+                    <!-- What we are looking for -->
+                    <div class="mb-8">
+                        <h3 class="text-2xl text-tarawera-blue mb-4 font-cursive" data-key="lookingForTitle">What are we looking for?</h3>
+                        <p class="text-tarawera-blue/90 mb-4" data-key="lookingForDesc1">We are looking for a junior programmer who has a passion for web application development. For this position we do not require previous experience. You need to know how to program.</p>
+                        <p class="text-tarawera-blue/90 mb-4" data-key="lookingForDesc2">We are looking for someone who is good at programming, eager to learn and grow. We don't need you to have formal education, but you will have to demonstrate that you have aptitudes for this position.</p>
+                        <p class="text-tarawera-blue/90 mb-4" data-key="lookingForDesc3">Have sufficient English level to be able to communicate well with native speakers. You don't need to have formal education or any certificate, but to give you an idea, around B2 level. Several of the colleagues are English and don't speak Spanish.</p>
+                    </div>
+
+                    <!-- What would make you stand out -->
+                    <div class="mb-8">
+                        <h3 class="text-2xl text-tarawera-blue mb-4 font-cursive" data-key="standOutTitle">What would make you stand out?</h3>
+                        <p class="text-tarawera-blue/90 mb-4" data-key="standOutDesc">For this position, it is essential to have a disability certificate equal to or greater than 33%.</p>
+                        <p class="text-tarawera-blue/90 mb-4" data-key="standOutNote">We're not looking for all of this, it's a list of qualities that if you have any, would make you stand out:</p>
+                        <ul class="list-disc list-inside space-y-2 text-tarawera-blue/90 ml-4">
+                            <li data-key="standOut1">Demonstrating your creativity, originality and willingness to work.</li>
+                            <li data-key="standOut2">Being up to date with industry trends.</li>
+                            <li data-key="standOut3">Having experience with some version control system, ideally Git.</li>
+                            <li data-key="standOut4">Currently studying or having completed a vocational training cycle or degree in Computer Science or related field.</li>
+                            <li data-key="standOut5">Alternatively, demonstrating that you have had an interest in learning things independently, such as taking online courses.</li>
+                            <li data-key="standOut6">If you have some experience with any of the technologies we use, it always helps (PHP, Javascript, Symfony, Laravel, Python, .NET, Ruby, Postgres, AWS, React, Vue).</li>
+                        </ul>
+                    </div>
+
+                    <!-- Selection Process -->
+                    <div class="mb-8">
+                        <h3 class="text-2xl text-tarawera-blue mb-4 font-cursive" data-key="processTitle">What will the selection process be like?</h3>
+                        <ul class="list-disc list-inside space-y-2 text-tarawera-blue/90 ml-4">
+                            <li data-key="process1">We review your profile and see if it could fit with what we're looking for or not.</li>
+                            <li data-key="process2">First interview and initial contact.</li>
+                            <li data-key="process3">English level test.</li>
+                            <li data-key="process4">Code test.</li>
+                            <li data-key="process5">In-depth interview.</li>
+                        </ul>
+                        <p class="text-tarawera-blue/90 mt-4 italic" data-key="processNote">If you need any adaptation in the tests or interviews, please let us know so we can make the necessary adjustments.</p>
+                    </div>
+
+                    <!-- What we offer -->
+                    <div class="mb-8">
+                        <h3 class="text-2xl text-tarawera-blue mb-4 font-cursive" data-key="offerWhatTitle">What do we offer?</h3>
+                        <ul class="list-disc list-inside space-y-2 text-tarawera-blue/90 ml-4">
+                            <li data-key="offer1">For this position we are looking for someone at point T1 to D4 on our scale (Intern to Junior), which means from 16,576 to 23,042 euros gross per year.</li>
+                            <li data-key="offer2">Permanent contract.</li>
+                            <li data-key="offer3">On-site work mode.</li>
+                            <li data-key="offer4">Full-time schedule.</li>
+                            <li data-key="offer5">Annual contract review.</li>
+                            <li data-key="offer6">Great opportunities for progression.</li>
+                            <li data-key="offer7">Fantastic access to professional development resources.</li>
+                            <li data-key="offer8">Budget for training, conferences, etc.</li>
+                            <li data-key="offer9">Flexible hours within the 7:30-19:30h interval, to overlap with colleagues.</li>
+                            <li data-key="offer10">Great co-workers who are very happy to work at this company.</li>
+                            <li data-key="offer11">Optional workshops and activities to socialize (health, cooking, board games...)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="bg-silver-tree-green/10 p-6 rounded-lg border-l-4 border-silver-tree-green">
+                        <p class="text-tarawera-blue mb-4 font-cursive text-lg" data-key="contactOffer">If you are interested in this offer, please send your CV to:</p>
+                        <a href="mailto:info@granadev.es" class="text-silver-tree-green hover:text-silver-tree-green-darker text-xl font-bold transition-colors duration-300">
+                            <i class="fas fa-envelope mr-2"></i>info@granadev.es
+                        </a>
+                        <p class="text-tarawera-blue/80 mt-4 italic" data-key="thankYou">Thank you very much!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-tarawera-blue text-light-text text-center py-8 mt-0 border-t-4 border-silver-tree-green">
+        <div class="container mx-auto px-6">
+            <p data-key="footerText" class="m-0 text-medium-text font-sans">© 2025 Granadev. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenuToggle && navLinks) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+                    navLinks.classList.toggle('hidden');
+                    navLinks.classList.toggle('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenuToggle.textContent = isExpanded ? '☰' : '✕';
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
