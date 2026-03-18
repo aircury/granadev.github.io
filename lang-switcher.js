@@ -188,9 +188,10 @@
                     } else if ((key === 'socEmail' || key === 'contactEmailValue') && element.tagName === 'A') {
                         element.href = `mailto:${value}`;
                         element.textContent = value;
-                    } else if (key === 'footerPrivacyLink' && element.tagName === 'A') {
+                    } else if (key === 'footerPrivacyLink' && element.tagName.toUpperCase() === 'A') {
                         element.textContent = value;
-                        if (translations[lang].footerPrivacyHref) element.href = translations[lang].footerPrivacyHref;
+                        const href = translations[lang].footerPrivacyHref;
+                        if (href) element.setAttribute('href', href);
                     } else if (element.placeholder !== undefined && (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA')) {
                         element.placeholder = value;
                     } else {
@@ -232,9 +233,9 @@
     // --- Initial Language Load ---
     document.addEventListener('DOMContentLoaded', () => {
         setupLanguageButtons();
-        const urlLang = getLangFromUrl();
-        const preferredLanguage = localStorage.getItem('preferredLanguage');
-        const browserLanguage = navigator.language.split('-')[0];
+        const urlLang = getLangFromUrl()?.toLowerCase();
+        const preferredLanguage = localStorage.getItem('preferredLanguage')?.toLowerCase();
+        const browserLanguage = navigator.language.split('-')[0].toLowerCase();
         const langToUse = urlLang || preferredLanguage || (translations[browserLanguage] ? browserLanguage : 'en');
         setLanguage(langToUse);
     });
