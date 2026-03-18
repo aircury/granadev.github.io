@@ -29,6 +29,7 @@
             contactEmailValue: "info@granadev.es",
             contactHoursLabel: "Business Hours",
             footerText: `© ${new Date().getFullYear()} Granadev. All Rights Reserved.`,
+            footerPrivacyLink: "Privacy policy",
             // Summer of Code page
             heroTitle: "SUMMER", heroOf: "OF", heroCode: "CODE", heroScholarships: "3 SCHOLARSHIPS OF", heroAmount: "3000 €", heroEach: "EACH", heroSubtitle: "FOR 3 PROJECTS THIS SUMMER",
             mainPitch: "We reward the best open source proposals related to education or other social benefit",
@@ -98,6 +99,7 @@
             contactEmailValue: "info@granadev.es",
             contactHoursLabel: "Horario de Atención",
             footerText: `© ${new Date().getFullYear()} Granadev. Todos los Derechos Reservados.`,
+            footerPrivacyLink: "Política de privacidad",
             // Summer of Code page
             heroTitle: "SUMMER OF CODE", heroOf: "OF", heroCode: "CODE", heroScholarships: "3 BECAS DE", heroAmount: "3000 €", heroEach: "CADA UNA", heroSubtitle: "PARA 3 PROYECTOS ESTE VERANO",
             mainPitch: "Premiamos las mejores propuestas de código abierto relacionadas con la educación u otro beneficio social",
