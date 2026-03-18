@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Granadev</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'tarawera-blue': '#0A3C5D',
+                'downy-aquamarine': '#77C9D4',
+                'silver-tree-green': '#57BC90',
+                'silver-tree-green-darker': '#4aa77e',
+                'light-text': '#ecf0f1',
+                'medium-text': '#bdc3c7',
+                'body-bg': '#f9f9f9',
+                'section-bg-alt': '#ffffff',
+                'border-color': '#e0e0e0',
+              },
+              fontFamily: {
+                sans: ['Poppins', 'sans-serif'],
+                cursive: ['Comfortaa', 'cursive'],
+                fugaz: ['Fugaz One', 'cursive'],
+              },
+            }
+          }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            @apply font-sans font-normal leading-relaxed text-tarawera-blue bg-body-bg;
+         }
+         h2, h3, h4, h5, h6, header nav a, footer a {
+             @apply font-cursive font-bold;
+         }
+        h2::after {
+            content: '';
+            @apply block w-[60px] h-[3px] bg-silver-tree-green mx-auto mt-2.5;
+        }
+        .nav-links a:hover { @apply text-silver-tree-green bg-silver-tree-green/10; }
+    </style>
+</head>
+<body>
+
+    <header class="bg-section-bg-alt text-tarawera-blue py-4 border-b border-border-color sticky top-0 left-0 w-full z-[1000] shadow-md">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html"><img src="granadev.png" alt="Granadev Logo" class="max-h-[85px] transition-transform duration-300 ease-in-out hover:scale-105"></a>
+            <nav class="hidden md:block">
+                <ul class="nav-links flex items-center">
+                    <li class="ml-6"><a href="index.html#hero" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Inicio</a></li>
+                    <li class="ml-6"><a href="index.html#services" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Servicios</a></li>
+                    <li class="ml-6"><a href="index.html#about" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Quiénes Somos</a></li>
+                    <li class="ml-6"><a href="index.html#contact" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Contacto</a></li>
+                    <li class="ml-6"><a href="summer-of-code.html" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Summer of Code</a></li>
+                    <li class="ml-6"><a href="offers.html" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Ofertas de Trabajo</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle md:hidden bg-none border-none text-3xl cursor-pointer text-tarawera-blue p-1 z-[1100]" aria-label="Abrir menú" aria-expanded="false">☰</button>
+        </div>
+        <div class="md:hidden">
+             <ul class="nav-links hidden flex-col absolute top-full left-0 w-full bg-section-bg-alt shadow-lg border-t border-border-color">
+                  <li class="text-center border-b border-border-color"><a href="index.html#hero" class="block p-4">Inicio</a></li>
+                  <li class="text-center border-b border-border-color"><a href="index.html#services" class="block p-4">Servicios</a></li>
+                  <li class="text-center border-b border-border-color"><a href="index.html#about" class="block p-4">Quiénes Somos</a></li>
+                  <li class="text-center border-b border-border-color"><a href="index.html#contact" class="block p-4">Contacto</a></li>
+                  <li class="text-center border-b border-border-color"><a href="summer-of-code.html" class="block p-4">Summer of Code</a></li>
+                  <li class="text-center border-b border-border-color"><a href="offers.html" class="block p-4">Ofertas de Trabajo</a></li>
+             </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-section-bg-alt text-center py-16 border-b border-border-color">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tight text-tarawera-blue mb-6 leading-tight font-fugaz">Política de privacidad</h1>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="container mx-auto px-6 max-w-4xl prose prose-tarawera-blue">
+                <p class="text-tarawera-blue/90 mb-6 leading-relaxed">
+                    En cumplimiento del Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de los mismos (RGPD) y la Ley Orgánica 3/2018 de Protección de datos personales y garantía de los derechos digitales, le informamos del tratamiento que se da a sus datos personales.
+                </p>
+                <p class="text-tarawera-blue/90 mb-6 leading-relaxed">
+                    En <strong>Granadev</strong> aplicamos las medidas de seguridad necesarias para evitar la alteración, pérdida, tratamiento o acceso no autorizado de los datos personales, habida cuenta en todo momento del estado de la tecnología, así como para proteger sus datos y guardar total confidencialidad.
+                </p>
+                <p class="text-tarawera-blue/90 mb-10 leading-relaxed">
+                    De todas formas, el usuario debe ser consciente de que las medidas de seguridad en Internet no son inexpugnables. Somos respetuosos en todo caso con la voluntad de nuestros contactos en el tratamiento de su información. El usuario se hace responsable de la veracidad de la información que nos proporcione así como de su actualización. Igualmente será responsable de cualquier daño o perjuicio que pudiera derivarse como consecuencia de que los datos facilitados sean falsos, inexactos o no se encuentren actualizados.
+                </p>
+
+                <h2 class="text-2xl text-tarawera-blue mb-4 mt-10">Datos del responsable</h2>
+                <p class="text-tarawera-blue/90 mb-2 font-cursive font-bold">Granadev</p>
+                <p class="text-tarawera-blue/90 mb-2">B19647700</p>
+                <p class="text-tarawera-blue/90 mb-2">Calle Recogidas, 35, 1A</p>
+                <p class="text-tarawera-blue/90 mb-4">18005 Granada, España</p>
+                <p class="text-tarawera-blue/90 mb-8">
+                    Contacto: <a href="mailto:info@granadev.es" class="text-silver-tree-green hover:text-silver-tree-green-darker font-bold">info@granadev.es</a>
+                </p>
+
+                <h2 class="text-2xl text-tarawera-blue mb-4 mt-10">Finalidad</h2>
+                <p class="text-tarawera-blue/90 mb-4 leading-relaxed">
+                    <strong>Contacto:</strong> Solo solicitaremos la información imprescindible en cada momento para prestar nuestros servicios e informar de novedades y otros contenidos vinculados con la Empresa y que puedan ser de su interés.
+                </p>
+                <p class="text-tarawera-blue/90 mb-8 leading-relaxed">
+                    <strong>Redes sociales:</strong> Estamos presentes en diferentes redes sociales. Puede que facilites datos personales a través de nuestro perfil; en ese caso, la finalidad del tratamiento de sus datos es interactuar a través de ese medio.
+                </p>
+
+                <h2 class="text-2xl text-tarawera-blue mb-4 mt-10">Base legítima del tratamiento</h2>
+                <p class="text-tarawera-blue/90 mb-8 leading-relaxed">
+                    Porque nos da el consentimiento al facilitar sus datos voluntariamente.
+                </p>
+
+                <h2 class="text-2xl text-tarawera-blue mb-4 mt-10">Tiempos de conservación</h2>
+                <p class="text-tarawera-blue/90 mb-8 leading-relaxed">
+                    Podremos acceder a los datos que publiquen en nuestro perfil de redes sociales mientras sean seguidores nuestros y no los supriman. Respecto a datos de contacto para solicitar información, no se almacenan.
+                </p>
+
+                <h2 class="text-2xl text-tarawera-blue mb-4 mt-10">Destinatarios y transferencias internacionales de datos</h2>
+                <p class="text-tarawera-blue/90 mb-4 leading-relaxed">
+                    En ningún caso se ceden datos a terceros y no está previsto hacer transferencias internacionales de datos. Cuando facilita sus datos en nuestros perfiles de redes sociales, debe ser consciente de que dichas redes también son responsables del tratamiento y tienen sus propias políticas de privacidad. Puede consultarlas:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-tarawera-blue/90 ml-4 mb-8">
+                    <li>Twitter/X: <a href="https://x.com/es/privacy" target="_blank" rel="noopener noreferrer" class="text-silver-tree-green hover:underline">https://x.com/es/privacy</a></li>
+                    <li>LinkedIn: <a href="https://es.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-silver-tree-green hover:underline">https://es.linkedin.com/legal/privacy-policy</a></li>
+                </ul>
+
+                <h2 class="text-2xl text-tarawera-blue mb-4 mt-10">Derechos de los usuarios</h2>
+                <p class="text-tarawera-blue/90 mb-4 leading-relaxed">
+                    Puedes ejercer tus derechos de acceso, modificación, supresión y oposición de sus datos en el correo electrónico <a href="mailto:info@granadev.es" class="text-silver-tree-green hover:text-silver-tree-green-darker font-bold">info@granadev.es</a>, así como ejercitar los derechos de limitación y portabilidad, o mediante correo postal a la dirección arriba indicada, debiendo acreditar su identidad y poniendo como asunto «Protección de datos».
+                </p>
+                <p class="text-tarawera-blue/90 mb-8 leading-relaxed">
+                    Tiene derecho a presentar una reclamación ante la autoridad de control, el <a href="https://www.ctpdandalucia.es/" target="_blank" rel="noopener noreferrer" class="text-silver-tree-green hover:underline">Consejo de Transparencia y Protección de datos de Andalucía</a>, si no está conforme con el tratamiento que se hace de sus datos personales.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-tarawera-blue text-light-text text-center py-8 mt-0 border-t-4 border-silver-tree-green">
+        <div class="container mx-auto px-6">
+            <p class="m-0 text-medium-text font-sans">© <span id="footer-year"></span> Granadev. Todos los Derechos Reservados.</p>
+            <p class="mt-2 text-medium-text text-sm">
+            <a href="privacy-policy.html" class="text-downy-aquamarine hover:text-light-text transition-colors">Privacy policy (English)</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (mobileMenuToggle && navLinks) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+                    navLinks.classList.toggle('hidden');
+                    mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenuToggle.textContent = isExpanded ? '☰' : '✕';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

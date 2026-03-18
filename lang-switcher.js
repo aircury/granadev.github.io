@@ -30,6 +30,7 @@
             contactHoursLabel: "Business Hours",
             footerText: `© ${new Date().getFullYear()} Granadev. All Rights Reserved.`,
             footerPrivacyLink: "Privacy policy",
+            footerPrivacyHref: "privacy-policy.html",
             // Summer of Code page
             heroTitle: "SUMMER", heroOf: "OF", heroCode: "CODE", heroScholarships: "3 SCHOLARSHIPS OF", heroAmount: "3000 €", heroEach: "EACH", heroSubtitle: "FOR 3 PROJECTS THIS SUMMER",
             mainPitch: "We reward the best open source proposals related to education or other social benefit",
@@ -100,6 +101,7 @@
             contactHoursLabel: "Horario de Atención",
             footerText: `© ${new Date().getFullYear()} Granadev. Todos los Derechos Reservados.`,
             footerPrivacyLink: "Política de privacidad",
+            footerPrivacyHref: "politica-privacidad.html",
             // Summer of Code page
             heroTitle: "SUMMER OF CODE", heroOf: "OF", heroCode: "CODE", heroScholarships: "3 BECAS DE", heroAmount: "3000 €", heroEach: "CADA UNA", heroSubtitle: "PARA 3 PROYECTOS ESTE VERANO",
             mainPitch: "Premiamos las mejores propuestas de código abierto relacionadas con la educación u otro beneficio social",
@@ -186,6 +188,9 @@
                     } else if ((key === 'socEmail' || key === 'contactEmailValue') && element.tagName === 'A') {
                         element.href = `mailto:${value}`;
                         element.textContent = value;
+                    } else if (key === 'footerPrivacyLink' && element.tagName === 'A') {
+                        element.textContent = value;
+                        if (translations[lang].footerPrivacyHref) element.href = translations[lang].footerPrivacyHref;
                     } else if (element.placeholder !== undefined && (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA')) {
                         element.placeholder = value;
                     } else {
