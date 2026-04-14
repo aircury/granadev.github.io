@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated management policy - Granadev</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'tarawera-blue': '#0A3C5D',
+                'downy-aquamarine': '#77C9D4',
+                'silver-tree-green': '#57BC90',
+                'silver-tree-green-darker': '#4aa77e',
+                'light-text': '#ecf0f1',
+                'medium-text': '#bdc3c7',
+                'body-bg': '#f9f9f9',
+                'section-bg-alt': '#ffffff',
+                'border-color': '#e0e0e0',
+              },
+              fontFamily: {
+                sans: ['Poppins', 'sans-serif'],
+                cursive: ['Comfortaa', 'cursive'],
+                fugaz: ['Fugaz One', 'cursive'],
+              },
+            }
+          }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            @apply font-sans font-normal leading-relaxed text-tarawera-blue bg-body-bg;
+         }
+         h2, h3, h4, h5, h6, header nav a, footer a {
+             @apply font-cursive font-bold;
+         }
+        h2::after {
+            content: '';
+            @apply block w-[60px] h-[3px] bg-silver-tree-green mx-auto mt-2.5;
+        }
+        .nav-links a:hover { @apply text-silver-tree-green bg-silver-tree-green/10; }
+    </style>
+</head>
+<body>
+
+    <header class="bg-section-bg-alt text-tarawera-blue py-4 border-b border-border-color sticky top-0 left-0 w-full z-[1000] shadow-md">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html"><img src="granadev.png" alt="Granadev Logo" class="max-h-[85px] transition-transform duration-300 ease-in-out hover:scale-105"></a>
+            <nav class="hidden md:block">
+                <ul class="nav-links flex items-center">
+                    <li class="ml-6"><a href="index.html#hero" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Home</a></li>
+                    <li class="ml-6"><a href="index.html#services" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Services</a></li>
+                    <li class="ml-6"><a href="index.html#about" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">About Us</a></li>
+                    <li class="ml-6"><a href="index.html#contact" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Contact</a></li>
+                    <li class="ml-6"><a href="summer-of-code.html" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Summer of Code</a></li>
+                    <li class="ml-6"><a href="offers.html" class="block px-3 py-2 rounded transition-colors duration-300 ease-in-out">Job Offers</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle md:hidden bg-none border-none text-3xl cursor-pointer text-tarawera-blue p-1 z-[1100]" aria-label="Toggle menu" aria-expanded="false">☰</button>
+        </div>
+        <div class="md:hidden">
+             <ul class="nav-links hidden flex-col absolute top-full left-0 w-full bg-section-bg-alt shadow-lg border-t border-border-color">
+                  <li class="text-center border-b border-border-color"><a href="index.html#hero" class="block p-4">Home</a></li>
+                  <li class="text-center border-b border-border-color"><a href="index.html#services" class="block p-4">Services</a></li>
+                  <li class="text-center border-b border-border-color"><a href="index.html#about" class="block p-4">About Us</a></li>
+                  <li class="text-center border-b border-border-color"><a href="index.html#contact" class="block p-4">Contact</a></li>
+                  <li class="text-center border-b border-border-color"><a href="summer-of-code.html" class="block p-4">Summer of Code</a></li>
+                  <li class="text-center border-b border-border-color"><a href="offers.html" class="block p-4">Job Offers</a></li>
+             </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-section-bg-alt text-center py-16 border-b border-border-color">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tight text-tarawera-blue mb-6 leading-tight font-fugaz">Integrated management policy</h1>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="container mx-auto px-6 max-w-4xl text-tarawera-blue leading-relaxed">
+<p class="text-lg leading-relaxed mb-6"><strong>Granadev S.L. is part of the Aircury group.</strong> The AIRCURY group is a business group dedicated to the design, development, deployment, operation and maintenance of software solutions and digital services, supported by cloud infrastructures and a predominantly remote working model, serving national and international clients.</p><p class="mb-6">AIRCURY group management recognises that service quality, environmental protection, effective management of information technology services and information security are strategic elements for sustainability, customer trust, regulatory compliance and business continuity.</p><p class="mb-8">To this end, AIRCURY establishes and maintains an Integrated Management System, in accordance with ISO 9001, ISO 14001, ISO/IEC 20000-1, ISO/IEC 27001 and the requirements of the National Security Scheme (Royal Decree 311/2022), committing to its implementation, maintenance and continual improvement.</p><h3 class="text-2xl text-tarawera-blue font-cursive mt-10 mb-4">Management</h3><p class="mb-3">AIRCURY group management commits to:</p><ul class="list-disc pl-6 space-y-2 mb-8 text-tarawera-blue/90"><li>Providing the resources needed for the Integrated Management System to function properly.</li><li>Ensuring leadership, accountability and engagement at all levels of the organisation.</li><li>Integrating quality, environmental, service management and information security principles into strategy and business processes.</li><li>Fostering a preventive culture focused on continual improvement, risk management and operational excellence.</li></ul><h3 class="text-2xl text-tarawera-blue font-cursive mt-10 mb-4">Quality</h3><p class="mb-3">AIRCURY, regarding quality, commits to:</p><ul class="list-disc pl-6 space-y-2 mb-8 text-tarawera-blue/90"><li>Providing software services and solutions that meet applicable customer, legal and contractual requirements.</li><li>Ensuring the planning, control and improvement of processes supporting service delivery.</li><li>Measuring and analysing process performance and customer satisfaction as a basis for continual improvement.</li><li>Managing risks and opportunities that may affect the quality of services provided.</li></ul><h3 class="text-2xl text-tarawera-blue font-cursive mt-10 mb-4">Environment</h3><p class="mb-3">AIRCURY accepts its responsibility for environmental protection and commits to:</p><ul class="list-disc pl-6 space-y-2 mb-8 text-tarawera-blue/90"><li>Complying with applicable environmental legislation and other requirements subscribed by the organisation.</li><li>Preventing pollution and minimising environmental impacts arising from its activity, especially those associated with technological and energy resource use.</li><li>Promoting efficient resource use, reducing consumption and proper waste management.</li><li>Integrating the environmental perspective into decision-making and continual improvement of the management system.</li></ul><h3 class="text-2xl text-tarawera-blue font-cursive mt-10 mb-4">IT services</h3><p class="mb-3">AIRCURY, regarding IT services, commits to:</p><ul class="list-disc pl-6 space-y-2 mb-8 text-tarawera-blue/90"><li>Planning, designing, delivering, operating and improving information technology services in a controlled manner aligned with business and customer needs.</li><li>Defining and maintaining service level agreements, support processes and performance monitoring mechanisms.</li><li>Managing incidents, problems, changes and service continuity appropriately.</li><li>Ensuring alignment between IT service management and the organisation’s strategic objectives.</li></ul><h3 class="text-2xl text-tarawera-blue font-cursive mt-10 mb-4">Information security</h3><p class="mb-3">AIRCURY recognises that information and the systems supporting it are critical assets and commits to:</p><ul class="list-disc pl-6 space-y-2 mb-8 text-tarawera-blue/90"><li>Protecting the confidentiality, integrity, availability, authenticity and traceability of information.</li><li>Complying with ISO/IEC 27001:2022 and National Security Scheme requirements, according to the defined scope and categorisation level.</li><li>Applying a risk-based approach to identify, assess and treat threats that may affect information and services.</li><li>Implementing appropriate technical, organisational and procedural controls to prevent security incidents and respond effectively to them.</li><li>Ensuring service continuity and resilience of information systems.</li></ul><h3 class="text-2xl text-tarawera-blue font-cursive mt-10 mb-4">People</h3><p class="mb-3">The AIRCURY group and its people commit to:</p><ul class="list-disc pl-6 space-y-2 mb-8 text-tarawera-blue/90"><li>Ensuring staff competence and training in relation to quality, the environment, service management and information security.</li><li>Raising awareness and individual responsibility for compliance with established policies, standards and procedures.</li><li>Promoting active staff participation in improving the Integrated Management System.</li></ul><h3 class="text-2xl text-tarawera-blue font-cursive mt-10 mb-4">Compliance</h3><p class="mb-3">AIRCURY compliance management commits to:</p><ul class="list-disc pl-6 space-y-2 mb-8 text-tarawera-blue/90"><li>Identifying and complying with legal, regulatory and contractual requirements applicable to its activity.</li><li>Periodically evaluating Integrated Management System performance through monitoring, measurement, internal audits and management reviews.</li><li>Applying corrective and improvement actions to increase the effectiveness, efficiency and maturity of the system.</li><li>Maintaining this policy as a reference framework for establishing objectives and improvement plans.</li></ul><p class="mb-4">This Integrated Management Policy is communicated to all staff and relevant interested parties, and is available for consultation.</p><p class="mb-6">The policy will be reviewed periodically, and whenever significant changes occur in the organisation, activity, context or applicable requirements.</p><p class="text-sm text-tarawera-blue/70">Approved by: AIRCURY Group Management. Issue date: 12 January 2026. Official reference: <a href="https://www.aircury.es/politica-integrada" class="text-silver-tree-green hover:underline" target="_blank" rel="noopener noreferrer">aircury.es/politica-integrada</a>.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-tarawera-blue text-light-text text-center py-8 mt-0 border-t-4 border-silver-tree-green">
+        <div class="container mx-auto px-6">
+            <p class="m-0 text-medium-text font-sans">© <span id="footer-year"></span> Granadev. All Rights Reserved.</p>
+            <p class="mt-2 text-medium-text text-sm">
+                <a href="politica-integrada.html" class="text-downy-aquamarine hover:text-light-text transition-colors">Política integrada (Español)</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (mobileMenuToggle && navLinks) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+                    navLinks.classList.toggle('hidden');
+                    mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenuToggle.textContent = isExpanded ? '☰' : '✕';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
