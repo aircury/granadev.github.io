@@ -21,6 +21,13 @@
             aboutPoint2Title: "Tailored Solutions", aboutPoint2Desc: "We don't believe in one-size-fits-all. Your software is built specifically for your needs.",
             aboutPoint3Title: "Quality & Innovation", aboutPoint3Desc: "Committed to delivering robust, reliable, and forward-thinking software using modern technologies.",
             aboutPoint4Title: "Client-Centric Approach", aboutPoint4Desc: "We work collaboratively with you, ensuring transparency and alignment throughout the project lifecycle.",
+            certificationsTitle: "Our Certifications",
+            certificationsSubtitle: "Certified as an organisation",
+            certViewLink: "View certificate",
+            certCyberTitle: "Cyber Essentials+",
+            certIso27001Title: "ISO/IEC 27001:2022",
+            certIso9001Title: "ISO 9001:2015",
+            certIso14001Title: "ISO 14001:2015",
             contactTitle: "Let's Build Something Great Together", 
             contactIntro: "Have a project in mind or questions about our services? We'd love to hear from you!",
             contactAddressLabel: "Our Office", 
@@ -117,6 +124,13 @@
             aboutPoint2Title: "Soluciones a Medida", aboutPoint2Desc: "No creemos en soluciones únicas para todos. Tu software se construye específicamente para tus necesidades.",
             aboutPoint3Title: "Calidad e Innovación", aboutPoint3Desc: "Comprometidos con la entrega de software robusto, fiable y vanguardista utilizando tecnologías modernas.",
             aboutPoint4Title: "Enfoque Centrado en el Cliente", aboutPoint4Desc: "Trabajamos en colaboración contigo, asegurando transparencia y alineación durante todo el ciclo de vida del proyecto.",
+            certificationsTitle: "Nuestros Certificados",
+            certificationsSubtitle: "Certificados como organización",
+            certViewLink: "Ver certificado",
+            certCyberTitle: "Cyber Essentials+",
+            certIso27001Title: "ISO/IEC 27001:2022",
+            certIso9001Title: "ISO 9001:2015",
+            certIso14001Title: "ISO 14001:2015",
             contactTitle: "Construyamos Algo Grande Juntos", 
             contactIntro: "¿Tienes un proyecto en mente o preguntas sobre nuestros servicios? ¡Nos encantaría escucharte!",
             contactAddressLabel: "Nuestra Oficina", 
@@ -250,6 +264,18 @@
                     }
                 }
             }
+        });
+        document.querySelectorAll('[data-cert-href-en]').forEach(link => {
+            const href = lang === 'es'
+                ? (link.getAttribute('data-cert-href-es') || link.getAttribute('data-cert-href-en'))
+                : link.getAttribute('data-cert-href-en');
+            if (href) {
+                link.setAttribute('href', href);
+            }
+        });
+        document.querySelectorAll('[data-lang-only]').forEach(element => {
+            const onlyLang = element.getAttribute('data-lang-only');
+            element.classList.toggle('hidden', lang !== onlyLang);
         });
         langButtons.forEach(btn => {
             const btnLang = btn.id.split('-')[1];
