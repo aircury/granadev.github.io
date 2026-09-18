@@ -12,13 +12,14 @@ Granadev is a modern, responsive landing page for a software solutions company b
 
 ## Project Structure
 ```
-├── favicon.png
-├── granada.jpg
-├── granadev.png
-├── granadevlogo.png
+├── images/
+│   ├── favicon.png
+│   ├── granada.jpg
+│   ├── granadev.png
+│   ├── granadevlogo.png
+│   └── soc.jpg
 ├── index.html
 ├── lang-switcher.js
-├── soc.jpg
 ├── summer-of-code.html
 ```
 
