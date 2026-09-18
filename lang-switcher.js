@@ -279,6 +279,14 @@
                 link.setAttribute('href', href);
             }
         });
+        document.querySelectorAll('[data-cert-logo-en]').forEach(img => {
+            const src = lang === 'es'
+                ? (img.getAttribute('data-cert-logo-es') || img.getAttribute('data-cert-logo-en'))
+                : img.getAttribute('data-cert-logo-en');
+            if (src) {
+                img.setAttribute('src', src);
+            }
+        });
         document.querySelectorAll('[data-lang-only]').forEach(element => {
             const onlyLang = element.getAttribute('data-lang-only');
             element.classList.toggle('hidden', lang !== onlyLang);
